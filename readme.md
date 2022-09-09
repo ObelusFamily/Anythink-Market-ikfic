@@ -10,4 +10,43 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+This Setup is for Linux (Ubuntu 22.04LTS and higher)
+
+### Let's remove already installed docker first:
+
+```bash
+$ sudo apt remove docker-desktop
+```
+
+Do this, for a complete removal:
+
+```bash
+$ rm -r $HOME/.docker/desktop
+$ sudo rm /usr/local/bin/com.docker.cli
+$ sudo apt purge docker-desktop
+```
+
+### Let's install Docker
+
+Set up [Docker’s package repository](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository).
+
+Download [latest DEB package](https://desktop.docker.com/linux/main/amd64/docker-desktop-4.11.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+
+Install the package with apt as follows:
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
+```
+
+### Launch Docker Desktop
+
+```bash
+$ systemctl --user start docker-desktop
+```
+
+and check, if you've successfully installed Docker Desktop:
+
+```bash
+$ docker compose version
+```
