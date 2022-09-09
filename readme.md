@@ -50,3 +50,19 @@ and check, if you've successfully installed Docker Desktop:
 ```bash
 $ docker compose version
 ```
+
+### Let's now run our application
+
+Now, that docker is installed properly, we can run our app using following command in the root directory
+
+```bash
+$ sudo docker compose up
+```
+
+and then, enter the prompted admin password and all the images backend, db and frontend will start.
+
+You can check on http://localhost:3000/api/ping, if the backend's working fine
+
+and on http://localhost:3001/register, if the frontend's working fine.
+
+If everything seems good, then create a user for yourself for local development.
